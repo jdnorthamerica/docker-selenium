@@ -509,10 +509,10 @@ USER seluser
 #==================
 # How to get cpu arch dynamically: $(lscpu | grep Architecture | sed "s/^.*_//")
 ARG CHROME_DRIVER_VERSION="119.0.6045.105"
-ENV CHROME_DRIVER_BASE="chromedriver.storage.googleapis.com" \
+ENV CHROME_DRIVER_BASE="edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing" \
     CPU_ARCH="64"
-ENV CHROME_DRIVER_FILE="chromedriver_linux${CPU_ARCH}.zip"
-ENV CHROME_DRIVER_URL="https://${CHROME_DRIVER_BASE}/${CHROME_DRIVER_VERSION}/${CHROME_DRIVER_FILE}"
+ENV CHROME_DRIVER_FILE="chromedriver-linux${CPU_ARCH}.zip"
+ENV CHROME_DRIVER_URL="https://${CHROME_DRIVER_BASE}/${CHROME_DRIVER_VERSION}/linux64/${CHROME_DRIVER_FILE}"
 # Gets latest chrome driver version. Or you can hard-code it, e.g. 2.15
 RUN  wget -nv -O chromedriver_linux${CPU_ARCH}.zip ${CHROME_DRIVER_URL} \
   && unzip chromedriver_linux${CPU_ARCH}.zip \
