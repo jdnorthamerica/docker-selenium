@@ -514,9 +514,9 @@ ENV CHROME_DRIVER_BASE="edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing" \
 ENV CHROME_DRIVER_FILE="chromedriver-linux${CPU_ARCH}.zip"
 ENV CHROME_DRIVER_URL="https://${CHROME_DRIVER_BASE}/${CHROME_DRIVER_VERSION}/linux64/${CHROME_DRIVER_FILE}"
 # Gets latest chrome driver version. Or you can hard-code it, e.g. 2.15
-RUN  wget -nv -O chromedriver_linux${CPU_ARCH}.zip ${CHROME_DRIVER_URL} \
-  && unzip chromedriver_linux${CPU_ARCH}.zip \
-  && rm chromedriver_linux${CPU_ARCH}.zip \
+RUN  wget -nv -O ${CHROME_DRIVER_FILE} ${CHROME_DRIVER_URL} \
+  && unzip ${CHROME_DRIVER_FILE} \
+  && rm ${CHROME_DRIVER_FILE} \
   && mv chromedriver \
         chromedriver-${CHROME_DRIVER_VERSION} \
   && chmod 755 chromedriver-${CHROME_DRIVER_VERSION} \
