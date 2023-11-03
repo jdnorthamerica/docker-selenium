@@ -517,8 +517,10 @@ ENV CHROME_DRIVER_URL="https://${CHROME_DRIVER_BASE}/${CHROME_DRIVER_VERSION}/li
 RUN  wget -nv -O ${CHROME_DRIVER_FILE} ${CHROME_DRIVER_URL} \
   && unzip ${CHROME_DRIVER_FILE} \
   && rm ${CHROME_DRIVER_FILE} \
-  && chmod 755 chromedriver-linux64 \
-  && ln -s chromedriver-linux64 \
+  && mv chromedriver-linux64 \
+     chromedriver-${CHROME_DRIVER_VERSION} \
+  && chmod 755 chromedriver-${CHROME_DRIVER_VERSION} \
+  && ln -s chromedriver-${CHROME_DRIVER_VERSION} \
            chromedriver \
   && sudo ln -s /home/seluser/chromedriver /usr/bin
 
