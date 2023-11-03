@@ -520,7 +520,7 @@ RUN  wget -nv -O ${CHROME_DRIVER_FILE} ${CHROME_DRIVER_URL} \
   && mv chromedriver-linux64 \
      chromedriver-${CHROME_DRIVER_VERSION} \
   && chmod 755 chromedriver-${CHROME_DRIVER_VERSION} \
-  && ln -s chromedriver-${CHROME_DRIVER_VERSION} \
+  && ln -s chromedriver-${CHROME_DRIVER_VERSION}/chromedriver \
            chromedriver \
   && sudo ln -s /home/seluser/chromedriver /usr/bin
 
